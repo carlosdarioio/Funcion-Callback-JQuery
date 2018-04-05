@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container-fluid-">
+        <div class="row">
+            <div class="col-md-4 caja col-centrar">
+                <h3>jQuery - Efectos Toggle</h3>
+                <br>
+                <div class="esfera"></div>
+                <br>
+                
+                
+                
+                <div id="base" class="mice" title="Titulo del contenedor">click para mostrar el contenidos</div>
+                
+                <div id="panel">
+                    Hola mundo!
+                </div>
+                
+               <button class="btn brn-default" id="boton">Ocultar/Mostrar</button>
+                <div class="contenido"></div>
+            </div> 
+        </div>
+    </div>      
+    
+       
+      <script src="js/jquery-3.2.0.min.js"></script>
+       <script>
+        $(function(){
+         
+           $('.esfera').on('click',function(){
+               $(this).toggleClass('azul');
+           }); 
+            
+            //calbbalck  !!!
+            $('h3').click(function(){
+                          $('.esfera').fadeToggle('slow',function(){
+                              $('.contenido').html('Haz utilizado el efecto fadeToggle');
+                          });
+                          });
+            
+            
+              $('#base').hover(function(){
+                          $('#panel').slideToggle('slow');
+                          });
+            
+            
+            $('#boton').click(function(){
+                $('.esfera').toggle('fast');
+            });
+            
+        });        
+      </script>
+      <script src="js/codigo.js"></script> 
+      
+</body>
+</html>
